@@ -2,6 +2,11 @@ const movieSearchBox = document.getElementById('movie-search-box');
 const searchList = document.getElementById('search-list');
 const resultGrid = document.getElementById('result-grid');
 
+//Dark-Light
+const toggle = document.getElementById('toggleDark');
+const logo = document.querySelector('.logo');
+const ppp = document.querySelector('.ppp')
+
 async function loadMovies(searchTerm){
     const URL = `https://omdbapi.com/?s=${searchTerm}&apikey=1db30209`;
     const res = await fetch(`${URL}`);
@@ -83,5 +88,21 @@ function displayMovieDetails(details){
 window.addEventListener('click', (event) => {
     if(event.target.className != "form-control"){
         searchList.classList.add('hide-search-list');
+    }
+});
+
+
+toggle.addEventListener('click', function(){
+    this.classList.toggle('bi-moon');
+    if(this.classList.toggle('bi-brightness-high-fill')){
+        logo.style.background = '#222';
+        logo.style.color = '#ddd';
+        ppp.style.color = '#ddd';
+        logo.style.transition = '0.7s';
+    }else{
+        logo.style.background = '#ddd';
+        logo.style.color = '#222';
+        ppp.style.color = '#222';
+        logo.style.transition = '0.7s';
     }
 });
