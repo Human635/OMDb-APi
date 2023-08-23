@@ -1,0 +1,249 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+	color: white;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	background: rgb(44, 40, 113);
+	background: linear-gradient(
+		90deg,
+		rgb(167, 20, 226) ,
+		rgb(31, 31, 130) ,
+		rgb(114, 38, 145) ,
+		rgb(44, 44, 147) ,
+		rgb(104, 17, 139) 
+	);
+	background-size: 600% 600%;
+	animation: background_gradient 8s ease infinite;
+	}
+
+	@keyframes background_gradient {
+	0% {
+		background-position: 0% 25%;
+	}
+	20% {
+		background-position: 20% 40%;
+	}
+	40% {
+		background-position: 40% 60%;
+	}
+
+	60% {
+		background-position: 60% 80%;
+	}
+	80% {
+		background-position:  80% 100%;
+	}
+	100% {
+		background-position:  0% 20%;
+	}
+}
+
+.logo{
+	background-color: #222;
+}
+
+img{
+	width: 100%;
+    display: block;
+}
+
+input{
+	border-radius: 12px;
+	padding: 10px 15px;
+	outline: 0;
+	border: 1px solid transparent;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 25px;
+	font-weight: 500;
+
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	background-color: rgba(255, 255, 255, 0.5);
+}	
+
+.wrapper{
+    min-height: 100vh;
+}
+
+.wrapper .container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.search-container{
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    padding: 16px 0;
+    border-bottom: 1px solid #ff000048;
+}
+
+.logo p{
+    font-size: 32px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.logo p {
+	color: rgb(45, 102, 133);
+}
+
+.search-element{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.search-element h3{
+    align-self: center;
+    margin-right: 16px;
+    font-size: 32px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.search-element .form-control{
+    padding: 16px 32px;
+    font-size: 25px;
+    color: rgba(255, 187, 0, 0.695);
+    width: 350px;
+}
+
+.search-list{
+    position: absolute;
+    right: 0;
+    top: 100%;
+    max-height: 500px;
+    overflow-y: scroll;
+    z-index: 1;
+}
+
+.search-list .search-list-item{
+    padding: 8px;
+    border-bottom: 1px solid #333;
+    width: 340px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search-list .search-list-item:hover{
+    background-color: #1f1f1f;
+}
+
+.search-list-item{
+    display: flex;
+    align-items: center;
+}
+
+.search-item-thumbnail img{
+    width: 40px;
+    margin-right: 16px;
+}
+
+.search-item-info h3{
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.search-item-info p{
+    font-size: 12px;
+    margin-top: 8px;
+    font-weight: 600;
+    opacity: 0.6;
+}
+
+.search-list::-webkit-scrollbar{
+    width: 8px;
+}
+
+.search-list::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.search-list::-webkit-scrollbar-thumb{
+	background-color: #aa29293e;
+    border-radius: 10px;
+}
+
+.hide-search-list{
+    display: none;
+}
+
+.result-container{
+    padding: 48px 0;
+}
+
+.movie-poster img{
+	max-width: 300px;
+    margin: 0 auto;
+    border: 4px solid #fff;
+}
+
+.movie-info{
+    text-align: center;
+    color: #fff;
+    padding-top: 48px;
+}
+.movie-title{
+
+    font-size: 32px;
+    color: #518b3e;
+}
+.movie-misc-info{
+	list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+.movie-info .year{
+    font-weight: 500;
+}
+.movie-info .rated{
+    background-color: #2671d9;
+    padding: 4px;
+    margin: 0 4px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+.movie-info .released{
+    font-size: 14px;
+    opacity: 0.9;
+}
+.movie-info .writer{
+    padding: 8px;
+    margin: 16px 0;
+}
+.movie-info .genre{
+    background-color: #a02323;
+    display: inline-block;
+    padding: 8px;
+    border-radius: 3px;
+}
+.movie-info .plot{
+    max-width: 400px;
+    margin: 16px auto;
+}
+.movie-info .language{
+    color: #FFD700;
+    font-style: italic;
+}
+.movie-info .awards{
+    font-weight: 300;
+    font-size: 14px;
+}
+.movie-info .awards i{
+    color: #FFD700;
+    margin: 16px 7px 0 0;
+}
