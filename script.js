@@ -3,7 +3,7 @@ const searchList = document.getElementById('search-list');
 const resultGrid = document.getElementById('result-grid');
 
 async function loadMovies(searchTerm){
-    const URL = `https://omdbapi.com/?s=${searchTerm}&page=1&apikey=1db30209`;
+    const URL = `https://omdbapi.com/?s=${searchTerm}&apikey=1db30209`;
     const res = await fetch(`${URL}`);
     const data = await res.json();
     if(data.Response == "True") displayMovieList(data.Search);
@@ -28,7 +28,7 @@ function displayMovieList(movies){
         if(movies[idx].Poster != "N/A")
             moviePoster = movies[idx].Poster;
         else 
-            moviePoster = "image_not_found.png";
+            moviePoster = "./images.png";
 
         movieListItem.innerHTML = `
         <div class = "search-item-thumbnail">
@@ -60,7 +60,7 @@ function loadMovieDetails(){
 function displayMovieDetails(details){
     resultGrid.innerHTML = `
     <div class = "movie-poster">
-        <img src = "${(details.Poster != "N/A") ? details.Poster : "image_not_found.png"}" alt = "movie poster">
+        <img src = "${(details.Poster != "N/A") ? details.Poster : "./images.png"}" alt = "movie poster" />
     </div>
     <div class = "movie-info">
         <h3 class = "movie-title">${details.Title}</h3>
