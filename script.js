@@ -3,9 +3,13 @@ const searchList = document.getElementById('search-list');
 const resultGrid = document.getElementById('result-grid');
 
 //Dark-Light
-const toggle = document.getElementById('toggleDark');
+const toggle1 = document.getElementById('toggleDark');
 const logo = document.querySelector('.logo');
 const ppp = document.querySelector('.ppp')
+const saved = document.querySelector('.savedFilms')
+
+
+
 
 async function loadMovies(searchTerm){
     const URL = `https://omdbapi.com/?s=${searchTerm}&apikey=1db30209`;
@@ -42,6 +46,9 @@ function displayMovieList(movies){
         <div class = "search-item-info">
             <h3>${movies[idx].Title}</h3>
             <p>${movies[idx].Year}</p>
+        </div>
+        <div class="addMyFavorites">
+            <button class="addMyFavorite">Favorites</button>
         </div>
         `;
         searchList.appendChild(movieListItem);
@@ -92,17 +99,28 @@ window.addEventListener('click', (event) => {
 });
 
 
-toggle.addEventListener('click', function(){
+toggle1.addEventListener('click', function(){
     this.classList.toggle('bi-moon');
     if(this.classList.toggle('bi-brightness-high-fill')){
         logo.style.background = '#222';
         logo.style.color = '#ddd';
         ppp.style.color = '#ddd';
+        saved.style.backgroundColor = 'rgba(259, 259, 259, 0.7)';
+        saved.style.color = '#222'
         logo.style.transition = '0.7s';
+
+
+
+
     }else{
         logo.style.background = '#ddd';
         logo.style.color = '#222';
         ppp.style.color = '#222';
+        saved.style.backgroundColor = 'rgba(20, 20, 20, 0.9)';
+        saved.style.color = '#ddd'
         logo.style.transition = '0.7s';
+
+
     }
 });
+
